@@ -7,3 +7,7 @@
 *.suo
 *.userprefs
 *.sln.docstates
+bin/
+obj/
+Debug/
+Release/
