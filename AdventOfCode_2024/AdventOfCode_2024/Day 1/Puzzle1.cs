@@ -6,8 +6,12 @@ namespace AdventOfCode_2024.Day_1
 {
     public class Puzzle1
     {
-        public static void Main(string[] args)
+        public static void Solution(string[] args)
         {
+            /////////////////////
+            //PART 2 OF PUZZLE
+            /////////////////////
+
             //Read Lines from input
             using StreamReader reader = new StreamReader("./Day 1/input.txt");
             string[] lines = reader.ReadToEnd().Split("\n");
@@ -43,7 +47,7 @@ namespace AdventOfCode_2024.Day_1
             //PART 2 OF PUZZLE
             /////////////////////
 
-            //HashTable
+            //HashTable to store the numbers and their frequency
             Dictionary<int, int> dict = new Dictionary<int, int>();
             foreach(int num in arr2)
             {
@@ -57,6 +61,7 @@ namespace AdventOfCode_2024.Day_1
                 }
             }
 
+            //Find the similarity score
             int similarityScore = 0;
             foreach (int num in arr1)
             {
@@ -65,7 +70,7 @@ namespace AdventOfCode_2024.Day_1
                     similarityScore+= num * dict[num];
                 }
             }
-            Console.WriteLine($"total similarity on the lists: {similarityScore}");
+            Console.WriteLine($"similarity score: {similarityScore}");
 
 
 
