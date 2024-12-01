@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Text.RegularExpressions;
 
 namespace AdventOfCode_2024.Day_1
@@ -35,6 +36,37 @@ namespace AdventOfCode_2024.Day_1
                 hole += Math.Abs(arr1[start] - arr2[start]);
             }
             Console.WriteLine($"total distance between the lists: {hole}");
+
+
+
+            /////////////////////
+            //PART 2 OF PUZZLE
+            /////////////////////
+
+            //HashTable
+            Dictionary<int, int> dict = new Dictionary<int, int>();
+            foreach(int num in arr2)
+            {
+                if (dict.ContainsKey(num))
+                {
+                    dict[num]++;
+                }
+                else
+                {
+                    dict.Add(num, 1);
+                }
+            }
+
+            int similarityScore = 0;
+            foreach (int num in arr1)
+            {
+                if (dict.ContainsKey(num))
+                {
+                    similarityScore+= num * dict[num];
+                }
+            }
+            Console.WriteLine($"total similarity on the lists: {similarityScore}");
+
 
 
         }
