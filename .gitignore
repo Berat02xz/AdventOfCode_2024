@@ -1,0 +1,9 @@
+# Ignore Visual Studio files
+.vs/
+.vscode/
+.idea/
+*.user
+*.userosscache
+*.suo
+*.userprefs
+*.sln.docstates
