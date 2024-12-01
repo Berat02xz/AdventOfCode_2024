@@ -14,9 +14,9 @@ The repository is organized as follows:
 📂 AdventOfCode2024
 ├── 📂 Day01
 │   ├── Puzzle1.cs        # Solution for Day 1
-│   ├── Input.txt         # Puzzle input for Day 1
-│   └── README.md         # Explanation of the solution
 │── Start.cs              # Main class that runs solutions
 └── AdventOfCode_2024.sln  # Solution file
 ```
 
+## TOS
+In order to respect the [TOS](https://adventofcode.com/2024/about) of this event, this repository will not contain the file inputs and puzzle texts
