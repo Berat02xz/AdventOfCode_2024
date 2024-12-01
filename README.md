@@ -20,13 +20,3 @@ The repository is organized as follows:
 └── AdventOfCode_2024.sln  # Solution file
 ```
 
-## Setup and Usage
-
-1. **Clone the repository**  
-   ```bash
-   git clone https://github.com/yourusername/AdventOfCode2024.git
-   cd AdventOfCode2024
-   ```
-
-2. **Open the project**  
-   Open the `AdventOfCode2024.sln` file in your preferred C# IDE.
