@@ -41,6 +41,8 @@
 
             int initialDifference = Math.Sign(numbers[1] - numbers[0]); // Determine the initial diff
 
+            int maximumAllowed = 1; // Maximum allowed difference
+            
             for (int i = 0; i < numbers.Length - 1; i++)
             {
                 int difference = numbers[i + 1] - numbers[i];
@@ -48,7 +50,11 @@
                 // Check for consistency in sign and validate the difference range
                 if (Math.Sign(difference) != initialDifference || Math.Abs(difference) < 1 || Math.Abs(difference) > 3)
                 {
-                    return false; // Inconsistent or invalid difference
+                    maximumAllowed--;
+                    if (maximumAllowed < 0)
+                    {
+                        return false; // Inconsistent or invalid difference
+                    }
                 }
             }
 

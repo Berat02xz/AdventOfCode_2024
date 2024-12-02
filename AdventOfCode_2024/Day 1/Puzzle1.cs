@@ -8,10 +8,6 @@ namespace AdventOfCode_2024.Day_1
     {
         public static void Solution(string[] args)
         {
-            /////////////////////
-            //PART 2 OF PUZZLE
-            /////////////////////
-
             //Read Lines from input
             using StreamReader reader = new StreamReader("./Day 1/input.txt");
             string[] lines = reader.ReadToEnd().Split("\n");
@@ -41,12 +37,6 @@ namespace AdventOfCode_2024.Day_1
             }
             Console.WriteLine($"total distance between the lists: {hole}");
 
-
-
-            /////////////////////
-            //PART 2 OF PUZZLE
-            /////////////////////
-
             //HashTable to store the numbers and their frequency
             Dictionary<int, int> dict = new Dictionary<int, int>();
             foreach(int num in arr2)
@@ -71,8 +61,6 @@ namespace AdventOfCode_2024.Day_1
                 }
             }
             Console.WriteLine($"similarity score: {similarityScore}");
-
-
 
         }
 
