@@ -4,6 +4,7 @@
 
 using AdventOfCode_2024.Day_1;
 using AdventOfCode_2024.Day_2;
+using AdventOfCode_2024.Day_3;
 
 namespace AdventOfCode_2024
 {
@@ -12,7 +13,8 @@ namespace AdventOfCode_2024
         public static void Main(string[] args)
         {
             // Puzzle1.Solution(args);
-            Puzzle2.Solution(args);
+            //  Puzzle2.Solution(args);
+            Puzzle3.Solution(args);
         }
     }
 }
