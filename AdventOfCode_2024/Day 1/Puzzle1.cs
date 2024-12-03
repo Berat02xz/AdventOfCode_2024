@@ -35,7 +35,6 @@ namespace AdventOfCode_2024.Day_1
             {
                 hole += Math.Abs(arr1[start] - arr2[start]);
             }
-            Console.WriteLine($"total distance between the lists: {hole}");
 
             //HashTable to store the numbers and their frequency
             Dictionary<int, int> dict = new Dictionary<int, int>();
@@ -44,10 +43,12 @@ namespace AdventOfCode_2024.Day_1
                 if (dict.ContainsKey(num))
                 {
                     dict[num]++;
+                    Console.WriteLine($"num: {num} count: {dict[num]}");
                 }
                 else
                 {
                     dict.Add(num, 1);
+                    Console.WriteLine($"num: {num} count: {dict[num]}");
                 }
             }
 
@@ -60,6 +61,7 @@ namespace AdventOfCode_2024.Day_1
                     similarityScore+= num * dict[num];
                 }
             }
+            Console.WriteLine($"total distance between the lists: {hole}");
             Console.WriteLine($"similarity score: {similarityScore}");
 
         }
