@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -36,7 +37,7 @@ namespace AdventOfCode_2024.Day_4
             string reverseWord = "SAMX";
 
             int count = 0;
-            
+
             //Main for loop for XMAS
             for (int row = 0; row < rows; row++)
             {
@@ -133,7 +134,8 @@ namespace AdventOfCode_2024.Day_4
                     }
                 }
             }
-                    static bool checkHorizontal(char[,] grid, int row, int col, string word)
+
+            static bool checkHorizontal(char[,] grid, int row, int col, string word)
                     {
                     int wordLength = word.Length;
                     int cols = grid.GetLength(1);
@@ -232,8 +234,6 @@ namespace AdventOfCode_2024.Day_4
 
                 Console.WriteLine("XMAS Count: "+count);
                 Console.WriteLine("X Shaped MAS Count:" + countMAS);
-
-
 
         }
         }
