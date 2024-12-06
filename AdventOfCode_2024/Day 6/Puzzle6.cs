@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -47,44 +48,80 @@ namespace AdventOfCode_2024.Day_6
             }
 
 
-            HashSet<(int,int)> visited = new HashSet<(int,int)>();
 
-            //curr pos
-            int x = startX;
-            int y = startY;
-            visited.Add((x, y));
 
-            while (true)
+            bool Simulate(char[,] testGrid)
             {
-                int nextX = x + directions[currentDir, 0];
-                int nextY = y + directions[currentDir, 1];
+                HashSet<(int, int, int)> visitedStates = new HashSet<(int, int, int)>();
 
-                //break the loop if we leave the grid
-                if (nextX < 0 || nextY < 0 || nextX >= grid.GetLength(0) || nextY >= grid.GetLength(1))
-                {
-                    Console.WriteLine("Out of bounds - END");
-                    break;
-                }
+                // Initialize the guard's position and direction
+                int x = startX;
+                int y = startY;
+                int currentDir = 0; // Always starts facing up (^)
 
-                if (grid[nextX, nextY] == '#')
+                while (true)
                 {
-                    currentDir = (currentDir + 1) % 4;
-                    Console.WriteLine("TURN");
-                    Console.WriteLine($"({x},{y})");
-                }
-                else
-                {
-                    x = nextX;
-                    y = nextY;
-                    visited.Add((x, y));
-                    Console.WriteLine("MOVE");
-                    Console.WriteLine($"({x},{y})");
-                }
 
+                    // Check if we've revisited the same state (position + direction)
+                    if (!visitedStates.Add((x, y, currentDir)))
+                    {
+                        Console.WriteLine("Loop detected - VALID");
+                        return true; // Loop detected
+                    }
+
+                    int nextX = x + directions[currentDir, 0];
+                    int nextY = y + directions[currentDir, 1];
+
+                    //break the loop if we leave the grid
+                    if (nextX < 0 || nextY < 0 || nextX >= grid.GetLength(0) || nextY >= grid.GetLength(1))
+                    {
+                        Console.WriteLine("Out of bounds - NOT VALID");
+                        return false;
+                    }
+
+                    if (grid[nextX, nextY] == '#')
+                    {
+                        currentDir = (currentDir + 1) % 4;
+
+                    }
+                    else
+                    {
+                        x = nextX;
+                        y = nextY;
+                    }
+
+                }
             }
 
+            // Brute force all possible positions for the new obstruction
+            List<(int, int)> validPositions = new List<(int, int)>();
 
-            Console.WriteLine($"Distinct positions visited: {visited.Count}");
+            for (int i = 0; i < rows; i++)
+            {
+                for (int j = 0; j < cols; j++)
+                {
+                    // Check open spaces ('.') that are not the starting position
+                    if (grid[i, j] == '.' && !(i == startX && j == startY))
+                    {
+                        // Place an obstruction and simulate
+                        grid[i, j] = '#';
+                        if (Simulate(grid))
+                        {
+                            validPositions.Add((i, j)); // Record valid positions
+                            Console.WriteLine($"Valid Loop position: ({i}, {j})");
+                            Console.WriteLine($"--------number of loops so far: {validPositions.Count}");
+                        }
+                        grid[i, j] = '.'; // Reset to original state
+                    }
+                }
+            }
+
+            // Output results
+            Console.WriteLine($"Number of valid positions (part 2): {validPositions.Count}");
+
+
+
+
         }
     }
 }
