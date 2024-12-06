@@ -31,8 +31,8 @@ namespace AdventOfCode_2024.Day_6
             //Part 1
             int[,] directions = { { -1, 0 }, { 0, 1 }, { 1, 0 }, { 0, -1 } };
             
-            int startX = 0; //starting point
-            int startY = 0; //starting point
+            int startX = 0; 
+            int startY = 0; 
             int currentDir = 0;
 
             for(int i = 0; i < rows; i++)
@@ -54,19 +54,18 @@ namespace AdventOfCode_2024.Day_6
             {
                 HashSet<(int, int, int)> visitedStates = new HashSet<(int, int, int)>();
 
-                // Initialize the guard's position and direction
                 int x = startX;
                 int y = startY;
-                int currentDir = 0; // Always starts facing up (^)
+                int currentDir = 0; // (^)
 
                 while (true)
                 {
 
-                    // Check if we've revisited the same state (position + direction)
+                    //check if the same position has been visited with same direction (loop)
                     if (!visitedStates.Add((x, y, currentDir)))
                     {
                         Console.WriteLine("Loop detected - VALID");
-                        return true; // Loop detected
+                        return true; 
                     }
 
                     int nextX = x + directions[currentDir, 0];
@@ -93,30 +92,27 @@ namespace AdventOfCode_2024.Day_6
                 }
             }
 
-            // Brute force all possible positions for the new obstruction
+            // Brute force 
             List<(int, int)> validPositions = new List<(int, int)>();
 
             for (int i = 0; i < rows; i++)
             {
                 for (int j = 0; j < cols; j++)
                 {
-                    // Check open spaces ('.') that are not the starting position
                     if (grid[i, j] == '.' && !(i == startX && j == startY))
                     {
-                        // Place an obstruction and simulate
                         grid[i, j] = '#';
                         if (Simulate(grid))
                         {
-                            validPositions.Add((i, j)); // Record valid positions
+                            validPositions.Add((i, j)); 
                             Console.WriteLine($"Valid Loop position: ({i}, {j})");
                             Console.WriteLine($"--------number of loops so far: {validPositions.Count}");
                         }
-                        grid[i, j] = '.'; // Reset to original state
+                        grid[i, j] = '.'; 
                     }
                 }
             }
 
-            // Output results
             Console.WriteLine($"Number of valid positions (part 2): {validPositions.Count}");
 
 
