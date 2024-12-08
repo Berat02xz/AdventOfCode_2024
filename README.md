@@ -18,4 +18,4 @@ The repository is organized as follows:
 └── AdventOfCode_2024.sln  # Solution file
 ```
 
-In order to respect the [TOS](https://adventofcode.com/2024/about) of this event, this repository will not contain the file inputs and puzzle texts until the end of the event
+In order to respect the [TOS](https://adventofcode.com/2024/about) of this event, this repository will not contain the file inputs and puzzle texts
