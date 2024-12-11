@@ -12,6 +12,7 @@ using AdventOfCode_2024.Day_7;
 using AdventOfCode_2024.Day_8;
 using AdventOfCode_2024.Day_9;
 using AdventOfCode_2024.Day10;
+using AdventOfCode_2024.Day11;
 
 namespace AdventOfCode_2024
 {
@@ -28,7 +29,8 @@ namespace AdventOfCode_2024
             // Puzzle7.Solution(args);
             // Puzzle8.Solution(args);
             // Puzzle9.Solution(args);
-             Puzzle10.Solution(args);
+            // Puzzle10.Solution(args);
+            Puzzle11.Solution(args);
         }
     }
 }
