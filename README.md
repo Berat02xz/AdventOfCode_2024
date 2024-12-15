@@ -1,7 +1,7 @@
 
-# Advent of Code 2024 - Solutions in C# (.NET 9)
+# Advent of Code - Solutions in C# (.NET 9)
 
-This repo contains my solutions for the coding puzzles from [Advent of Code 2024](https://adventofcode.com/2024), implemented in **C#** using the latest **.NET 9** framework.
+This repo contains my solutions for the coding puzzles from [Advent of Code](https://adventofcode.com), implemented in **C#** using the latest **.NET 9** framework.
 
 ## About Advent of Code
 
@@ -19,3 +19,9 @@ The repository is organized as follows:
 ```
 
 In order to respect the [TOS](https://adventofcode.com/2024/about) of this event, this repository will not contain the file inputs and puzzle texts
+
+# Results Overview
+
+| Year | Result   |
+|------|----------|
+| 2024 | 20 stars |
