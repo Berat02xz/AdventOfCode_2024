@@ -20,6 +20,7 @@ namespace AdventOfCode_2024
     {
         public static void Main(string[] args)
         {
+            Console.WriteLine("Pick Solution From Commented Lines To Run (Open in editor)");
             // Puzzle1.Solution(args);
             // Puzzle2.Solution(args);
             // Puzzle3.Solution(args);
@@ -30,7 +31,7 @@ namespace AdventOfCode_2024
             // Puzzle8.Solution(args);
             // Puzzle9.Solution(args);
             // Puzzle10.Solution(args);
-            Puzzle11.Solution(args);
+            // Puzzle11.Solution(args);
         }
     }
 }
